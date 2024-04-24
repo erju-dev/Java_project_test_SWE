@@ -96,16 +96,15 @@ public class MainView extends AppLayout {
 
 	}
 
-	private static Tabs createMenuTabs() throws UnsupportedEncodingException {
-		final Tabs tabs = new Tabs();
-		// tabs.setOrientation(Tabs.Orientation.HORIZONTAL);
-		tabs.addThemeVariants(TabsVariant.LUMO_MINIMAL);
-		tabs.setId("tabs");
-		Component[] availableTabs = getAvailableTabs();
-		tabs.add(availableTabs);
-		tabs.add(getAvailableTabs());
-		tabs.add(availableTabs);
-		return tabs;
+private static Tabs createMenuTabs() throws UnsupportedEncodingException {
+    final Tabs tabs = new Tabs();
+    // tabs.setOrientation(Tabs.Orientation.HORIZONTAL);
+    tabs.addThemeVariants(TabsVariant.LUMO_MINIMAL);
+    tabs.setId("tabs");
+    Component[] availableTabs = getAvailableTabs();
+    tabs.add(availableTabs);
+    return tabs;
+}
 	}
 
 
@@ -123,10 +122,6 @@ public class MainView extends AppLayout {
 		HorizontalLayout layout_question = new HorizontalLayout();
 
 		/*
-    	barrio_ideal.setText(ControladorDiccionario.Traducir("main.barrioIdeal"));
-    	curiosidades.setText(ControladorDiccionario.Traducir("main.curiosidades"));
-    	questions.setText(ControladorDiccionario.Traducir("main.preguntas"));
-*/
 		Label menu_principal = new Label("HoodFinder");
 		Label barrio_ideal = new Label("Barrio ideal");
 		Label curiosidades = new Label("Blog");
@@ -189,9 +184,7 @@ public class MainView extends AppLayout {
 		selectTab();
 	}
 	@Override
-	private int inventedMethod() {
-		System.out.println("nada")
-	}
+    // This method seems to be a placeholder or for testing purposes and is not part of the superclass methods.
 
 	private void selectTab() {
 		String target = RouteConfiguration.forSessionScope().getUrl(getContent().getClass());
@@ -223,14 +216,4 @@ public class MainView extends AppLayout {
 		}
     }
     /*
-    private void RefrescarDisenoIdioma() {
-		try {
-	    	barrio_ideal.setText(ControladorDiccionario.Traducir("main.barrioIdeal"));
-	    	curiosidades.setText(ControladorDiccionario.Traducir("main.curiosidades"));
-	    	questions.setText(ControladorDiccionario.Traducir("main.preguntas"));
-		} catch (UnsupportedEncodingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		};
-	}*/
 }
